@@ -1,7 +1,7 @@
 
 *{
     font-family: "Playfair Display", serif;
-    text-transform: capitalize;
+    text-transform: none;
     text-decoration: none;
     outline: none;
     margin: 0; padding: 0;
@@ -53,6 +53,7 @@ header .navbar ul li a{
     font-size: 2rem;
     color: #d4426f;
     transition: .2s;
+    text-decoration: none;
 }
 
 header .navbar ul li .active,
@@ -97,44 +98,77 @@ header .fa-times{
     transform: rotate(180deg);
     color: #583273;
 }
-
-@media (max-width:768px){
-    html{
+/* General Styles */
+@media (max-width: 768px) {
+    html {
         font-size: 55%;
+        display: flex;
     }
-    
-    header .fa-bars{
+
+    header .fa-bars {
         display: block;
     }
-    
-    header .navbar{
+
+    header .navbar {
         position: fixed;
-        top: -100rem; left: 0;
+        top: -100rem;
+        left: 0;
         width: 100%;
         background: #fff;
         border-radius: 1rem;
         opacity: 0;
-        transition: .2s linear;
+        transition: 0.2s linear;
     }
 
-    header .navbar ul{
+    header .navbar ul {
         flex-flow: column;
         padding: 2rem 0;
     }
 
-    header .navbar ul li{
+    header .navbar ul li {
         margin: 1rem 0;
         width: 100%;
         text-align: center;
     }
-    
-    header .navbar ul li a{
+
+    header .navbar ul li a {
         font-size: 3rem;
     }
 
-    header .nav-toggle{
-        top:5.5rem;
+    header .nav-toggle {
+        top: 5.5rem;
         opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile-specific styles */
+    .navbar ul {
+        display: none; /* Initially hide the navigation menu on mobile */
+        width: 100%; /* Take up the full width of the container */
+        text-align: center;
+    }
+
+    /* Display menu when the navbar is active */
+    .navbar.active ul {
+        display: block; /* Show the menu when the navbar has the 'active' class */
+    }
+
+    .navbar ul li {
+        margin: 1rem 0; /* Adjust the spacing for the list items */
+    }
+
+    .navbar .menu-icon {
+        display: block; /* Show the hamburger icon on mobile */
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /* Additional styling to prevent wrapping and ensure a neat appearance */
+    .navbar ul li a {
+        font-size: 2rem; /* Increase link size for mobile */
+        text-decoration: none;
+        color: #fff; /* White text for mobile */
     }
 }
 
@@ -144,7 +178,7 @@ header .fa-times{
 .home {
     min-height: 100vh;
     background: linear-gradient(rgba(253, 226, 237, 0.8), rgba(253, 226, 237, 0.8)), 
-                url(../final\ project\ tes/background.jpg) no-repeat center center/cover;
+                url("../final project tes/background.jpg");
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -190,6 +224,8 @@ header .fa-times{
     transition: 2s;
     border: none;
     box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    font-family: "Playfair Display", serif;
+
 }
 
 .home .content button:hover {
@@ -292,7 +328,9 @@ section p, section ul li {
     line-height: 1.8;
     color: #333;
     margin-bottom: 1.5rem;
+    text-transform: none; /* Optional, as it's the default value */
 }
+
 
 /* History Section */
 .history-section {
@@ -392,6 +430,10 @@ section p, section ul li {
     section p, section ul li {
         font-size: 1.5rem;
     }
+}
+
+body {
+    font-family: 'Playfair Display', 'Arial', sans-serif;
 }
 
 
